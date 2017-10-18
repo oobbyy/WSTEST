@@ -30,6 +30,8 @@ public class Test extends TestCase {
 	private final static String DES = "DES";
     private final static String ENCODE = "UTF-8";
     private final static String defaultKey = "AIUEO123";
+    
+    
 
 	private final static String Server_Url = "https://dls.gacfcasales.com/dms.web/services/querySQL?wsdl";
 	private QuerySQL iWebService;
