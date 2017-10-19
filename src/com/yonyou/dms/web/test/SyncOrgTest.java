@@ -14,10 +14,11 @@ import com.yonyou.dms.web.client.syncorg.SyncOrgInfo;
 import com.yonyou.dms.web.client.syncorg.SyncOrgInfoLocator;
 import com.yonyou.dms.web.client.syncorg.SyncOrgInfoPortType;
 
+import junit.framework.TestCase;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
-public class SyncOrgTest {
+public class SyncOrgTest extends TestCase  {
 	private final static String DES = "DES";
     private final static String ENCODE = "UTF-8";
     private final static String defaultKey = "AIUEO123";
@@ -35,7 +36,7 @@ public class SyncOrgTest {
 
 	public void testLogin() throws Exception {
 //		String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><REQUEST><KEY>1001</KEY><SQL>SELECT NAME COL_1,BIRTHDAY COL_2,GENDER COL_3,MATH_SCORE COL_4,CASE RANK WHEN '3' THEN '合格' WHEN '2' THEN '良好' WHEN '1' THEN '优秀' WHEN '4' THEN '不合格' ELSE RANK END COL_5 FROM tr_ds_student_score WHERE BIRTHDAY>'1995-04-01 00:00:00'</SQL><QUERYDESC>生日晚于一九九五年04月的初二（3）班同学的姓名，生日，性别，数学分数和评级</QUERYDESC><TYPE>2</TYPE><COLENLIST>COL_1,COL_2,COL_3,COL_4,COL_5</COLENLIST><COLCHLIST>姓名,生日,性别,数学分数,评级</COLCHLIST><OPENID>oiDdCvybCszvBphe-Xf8KHKiu-9s</OPENID></REQUEST>";
-		String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><IF_SEND><INTERFACE_CODE>MDM0005</INTERFACE_CODE><ITEM><ORG_CODE>Sales</ORG_CODE><ORG_NAME>销售部</ORG_NAME><PARENT_ORG_CODE>CG_CHINA</PARENT_ORG_CODE><ORG_LEVEL>2</ORG_LEVEL><DUTY_TYPE>10431003</DUTY_TYPE><BUSS_TYPE>12351001</BUSS_TYPE><LEADER_NAME/><PHONE/><EMAIL/><COVER_AREA/><STATUS>10011001</STATUS></ITEM><ITEM><ORG_CODE>Network</ORG_CODE><ORG_NAME>网络部</ORG_NAME><PARENT_ORG_CODE>CG_CHINA</PARENT_ORG_CODE><ORG_LEVEL>2</ORG_LEVEL><DUTY_TYPE>10431003</DUTY_TYPE><BUSS_TYPE>12351001</BUSS_TYPE><LEADER_NAME/><PHONE/><EMAIL/><COVER_AREA/><STATUS>10011001</STATUS></ITEM></IF_SEND>";
+		String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><IF_SEND><INTERFACE_CODE>MDM0005</INTERFACE_CODE><ITEM><ORG_CODE>Sales</ORG_CODE><ORG_NAME>销售部</ORG_NAME><PARENT_ORG_CODE>CG_CHINA</PARENT_ORG_CODE><ORG_LEVEL>2</ORG_LEVEL><DUTY_TYPE>10431003</DUTY_TYPE><BUSS_TYPE>12351001</BUSS_TYPE><LEADER_NAME/><PHONE/><EMAIL/><COVER_AREA/><STATUS>10011001</STATUS></ITEM><ITEM><ORG_CODE>Network</ORG_CODE><ORG_NAME>网络部</ORG_NAME><PARENT_ORG_CODE>CG_CHINA</PARENT_ORG_CODE><ORG_LEVEL>2</ORG_LEVEL><DUTY_TYPE>10431003</DUTY_TYPE><BUSS_TYPE>12351001</BUSS_TYPE><LEADER_NAME/><PHONE/><EMAIL/><COVER_AREA/><STATUS>10011001</STATUS></ITEM><ITEM><ORG_CODE>SA_zhejiang_wz</ORG_CODE><ORG_NAME>温州二分区</ORG_NAME><PARENT_ORG_CODE>SA_ZHEJIANG</PARENT_ORG_CODE><ORG_LEVEL>2</ORG_LEVEL><DUTY_TYPE>10431005</DUTY_TYPE><BUSS_TYPE>12351001</BUSS_TYPE><LEADER_NAME/><PHONE/><EMAIL/><COVER_AREA/><STATUS>10011001</STATUS></ITEM></IF_SEND>";
 		String member = portType.syncOrg(xml);
 		System.out.println(member);
 	}
